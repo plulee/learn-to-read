@@ -1,0 +1,82 @@
+@import 'colors';
+@import 'constants';
+@import 'mixins';
+
+.filters {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+
+    .filters__title {
+        @include mobile-view {
+            display: block;
+            margin-bottom: .5rem;
+        }
+    }
+
+    .filters__dropdown {
+        @include mobile-view {
+            margin-left: 0;
+            width: 50%;
+        }
+
+        display: inline-block;
+        margin-left: 1rem;
+        position: relative;
+        width: 120px;
+
+    }
+
+    .filters__dropdown-toggle {
+        border: 1px solid $light-gray;
+        cursor: pointer;
+        padding-bottom: .75rem;
+        padding-top: .75rem;
+        text-align: center;
+        transition: .2s ease;
+        width: 100%;
+
+        &:hover {
+            background: $light-gray;
+        }
+
+        &.filters__dropdown-toggle--opened {
+            & + .filters__menu-items {
+                opacity: 1;
+            }
+        }
+    }
+
+    .filters__menu-items {
+        background: $white;
+        border: 1px solid $light-gray;
+        border-top: 0;
+        list-style: none;
+        margin-top: 0;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        transition: .15s ease;
+        width: 100%;
+    }
+
+    .filters__menu-item {
+        cursor: pointer;
+        margin: 0;
+        padding: .77rem;
+        position: relative;
+        text-align: center;
+        transition: .2s ease;
+
+        &:hover {
+            background: $light-gray;
+        }
+
+        &.filters__menu-item--active {
+            &::before {
+                content: "✔";
+                position: absolute;
+                left: .75rem;
+            }
+        }
+    }
+}

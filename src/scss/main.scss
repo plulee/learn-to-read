@@ -1,0 +1,42 @@
+@import 'colors';
+@import 'constants';
+@import 'filters';
+@import 'mixins';
+@import 'products';
+
+body {
+    color: $text-color;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+
+    h1 {
+        border-bottom: 1px solid $light-gray;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        padding-bottom: .77rem;
+    }
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1200px;
+        padding: 1rem 1rem 4rem;
+    }
+
+    .loading {
+        position: fixed;
+        display: block;
+        background: $light-gray;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        opacity: .9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+}
