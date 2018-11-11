@@ -5,3 +5,7 @@
         @content
     }
 }
+
+@mixin main-font() {
+    font-family: 'Lora', Helvetica, sans-serif;
+}

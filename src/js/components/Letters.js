@@ -29,14 +29,20 @@ class Letters extends React.Component {
 
     }
 
-    setBackground (index,state) {
+    setButtonClass (index,state) {
+        const buttonClass = "letter-button";
+        let classModifier = "";
         if (this.state.puzzleSolved) {
-            return "green";
+            classModifier = "word-solved";
         } else if (index < state) {
-            return "orange";
+            classModifier = "letter-solved";
+        } else if (index === state) {
+            classModifier = "active";
         } else {
-            return "grey";
+            classModifier = "unsolved";
         }
+
+        return `${buttonClass} ${buttonClass}--${classModifier}`;
     }
 
     render() {
@@ -48,16 +54,17 @@ class Letters extends React.Component {
         }
 
         return (
-            <div className="product">
-                <img className="product__image" src={imgUrl} alt={text} />
-                <div className="product__information">
+            <div className="puzzle">
+                <div className="puzzle__image-wrapper">
+                    <img className="puzzle__image" src={imgUrl} alt={text} />
+                </div>
+                <div className="puzzle__buttons">
                     {letters.map((letter,index) =>
                         (
-                            <button className="product__color-sample"
+                            <button
                                 key={index}
                                 onClick={()=> {this.handleButtonClick(index);}}
-                                title={letter}
-                                style={{backgroundColor: this.setBackground(index,this.state.lettersSolved)}}>
+                                className={this.setButtonClass(index,this.state.lettersSolved)}>
                                 {letter}
                             </button>
                         )

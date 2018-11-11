@@ -3,21 +3,27 @@ import * as cat from "../constants/categories";
 const words = [
     {
         id: "1",
-        text: "auto",
+        text: "jajko",
         category: cat.SINGLE,
-        url: "./images/car-1-blue.jpg",
+        url: "./images/jajko.jpg",
     },
     {
         id: "2",
-        text: "boks",
+        text: "lampa",
         category: cat.SINGLE,
-        url: "./images/gloves-1-red.jpg",
+        url: "./images/lampa.jpg",
     },
     {
         id: "3",
-        text: "fotel",
+        text: "nos",
         category: cat.SINGLE,
-        url: "./images/chair-1-orange.jpg",
+        url: "./images/nos.jpg",
+    },
+    {
+        id: "4",
+        text: "sowa",
+        category: cat.SINGLE,
+        url: "./images/sowa.jpg",
     }
 ];
 

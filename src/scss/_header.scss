@@ -1,0 +1,35 @@
+header {
+    background: $primary;
+    color: $white;
+    font-weight: bold;
+
+    .container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        align-items: center;
+        font-size: 1.1rem;
+        display: flex;
+    }
+
+    .points {
+        align-items: center;
+        background: $white;
+        border-radius: 50%;
+        display: flex;
+        color: $text-color;
+        font-size: 1.25rem;
+        justify-content: center;
+        height: 50px;
+        margin-left: 1rem;
+        min-width: 50px;
+    }
+}

@@ -35,16 +35,23 @@ class App extends React.Component {
         const wordText = words[index].text;
 
         return (
-            <div className="container">
+            <div className="page">
                 <ErrorBoundary>
-                    <h1>Learn to read - {this.props.pointsCount}</h1>
-                    <section className="products">
-                        <Letters
-                            key = {wordId}
-                            url = {wordUrl}
-                            text = {wordText}
-                        />
-                    </section>
+                    <header>
+                        <div className="container">
+                            <h1>Czytaj.io</h1>
+                            <h2>punkty: <span className="points">{this.props.pointsCount}</span></h2>
+                        </div>
+                    </header>
+                    <div className="container">
+                        <section className="puzzles">
+                            <Letters
+                                key = {wordId}
+                                url = {wordUrl}
+                                text = {wordText}
+                            />
+                        </section>
+                    </div>
                 </ErrorBoundary>
             </div>
         );
