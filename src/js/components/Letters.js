@@ -28,7 +28,7 @@ class Letters extends React.Component {
         if (this.state.puzzleSolved) {
             return "green";
         } else if (index < state) {
-            return "red";
+            return "orange";
         } else {
             return "grey";
         }
