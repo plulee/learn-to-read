@@ -1,7 +1,7 @@
 import React from "react";
 import ErrorBoundary from "react-error-boundary";
 import words from "../constants/words";
-import Letters from "./Letters";
+import Letters from "../containers/Letters";
 
 class App extends React.Component {
     constructor(props) {
@@ -19,26 +19,31 @@ class App extends React.Component {
         shuffleArray(words);
 
         this.state = {
-            active: false,
-            words
+            words,
+            index: this.props.pointsCount
         };
     }
 
     render() {
+        const length = this.state.words.length;
+        let index = this.props.pointsCount;
+        index = index - length * parseInt(index/length, 10);
+        const words = this.state.words;
+
+        const wordId = words[index].id;
+        const wordUrl = words[index].url;
+        const wordText = words[index].text;
+
         return (
             <div className="container">
                 <ErrorBoundary>
-                    <h1>Learn to read</h1>
+                    <h1>Learn to read - {this.props.pointsCount}</h1>
                     <section className="products">
-                        {this.state.words.map(word =>
-                            (
-                                <Letters
-                                    key = {word.id}
-                                    url = {word.url}
-                                    text = {word.text}
-                                />
-                            )
-                        )}
+                        <Letters
+                            key = {wordId}
+                            url = {wordUrl}
+                            text = {wordText}
+                        />
                     </section>
                 </ErrorBoundary>
             </div>

@@ -21,7 +21,12 @@ class Letters extends React.Component {
             const puzzleSolved = (wordLength === lettersSolved);
 
             this.setState({ lettersSolved, puzzleSolved });
+        } else {
+            if (this.state.puzzleSolved) {
+                this.props.puzzleSolved();
+            }
         }
+
     }
 
     setBackground (index,state) {
@@ -65,7 +70,7 @@ class Letters extends React.Component {
 
 Letters.propTypes = {
     url: PropTypes.string.isRequired,
-    text: PropTypes.array.isRequired,
+    text: PropTypes.string.isRequired,
 };
 
 export default Letters;

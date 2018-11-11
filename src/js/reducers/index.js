@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import filters from "./filters";
+import points from "./points";
 
 
 const rootReducer = combineReducers({
-    filters
+    points
 });
 
 export default rootReducer;
