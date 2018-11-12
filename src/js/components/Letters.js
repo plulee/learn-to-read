@@ -29,19 +29,37 @@ class Letters extends React.Component {
 
     }
 
-    setButtonClass (index,state) {
-        const buttonClass = "letter-button";
-        let classModifier = "";
-        if (this.state.puzzleSolved) {
+    setImageClass() {
+        const puzzleSolved = this.state.puzzleSolved;
+        const lettersSolved = this.state.lettersSolved;
+        const wordLength = this.state.wordLength;
+
+        let classModifier = "unsolved";
+
+        if (puzzleSolved) {
             classModifier = "word-solved";
-        } else if (index < state) {
-            classModifier = "letter-solved";
-        } else if (index === state) {
-            classModifier = "active";
-        } else {
-            classModifier = "unsolved";
+        } else if (lettersSolved > 0) {
+            classModifier = `${lettersSolved}-${wordLength}`;
         }
 
+        const imageClass = "puzzle__image";
+        return `${imageClass} ${imageClass}--${classModifier}`;
+    }
+
+    setButtonClass(index) {
+        const puzzleSolved = this.state.puzzleSolved;
+        const lettersSolved = this.state.lettersSolved;
+        let classModifier = "unsolved";
+
+        if (puzzleSolved) {
+            classModifier = "word-solved";
+        } else if (index < lettersSolved) {
+            classModifier = "letter-solved";
+        } else if (index === lettersSolved) {
+            classModifier = "active";
+        }
+
+        const buttonClass = "letter-button";
         return `${buttonClass} ${buttonClass}--${classModifier}`;
     }
 
@@ -56,15 +74,16 @@ class Letters extends React.Component {
         return (
             <div className="puzzle">
                 <div className="puzzle__image-wrapper">
-                    <img className="puzzle__image" src={imgUrl} alt={text} />
+                    <img className={this.setImageClass()}
+                        src={imgUrl} alt={text} />
                 </div>
                 <div className="puzzle__buttons">
-                    {letters.map((letter,index) =>
+                    {letters.map((letter, index) =>
                         (
                             <button
                                 key={index}
                                 onClick={()=> {this.handleButtonClick(index);}}
-                                className={this.setButtonClass(index,this.state.lettersSolved)}>
+                                className={this.setButtonClass(index)}>
                                 {letter}
                             </button>
                         )
