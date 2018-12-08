@@ -1,7 +1,7 @@
 {
-  "name": "product-listing-page",
+  "name": "learn-to-read",
   "version": "1.0.0",
-  "description": "react + redux based communicator",
+  "description": "react + redux based page",
   "main": "index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plulee/product-listing-page.git"
+    "url": "git+https://github.com/plulee/learn-to-read.git"
   },
   "author": "plulee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/plulee/product-listing-page/issues"
+    "url": "https://github.com/plulee/learn-to-read/issues"
   },
-  "homepage": "https://github.com/plulee/product-listing-page#readme",
+  "homepage": "https://github.com/plulee/learn-to-read#readme",
   "devDependencies": {
     "node-sass": "^4.9.3",
     "react-error-boundary": "^1.2.3",

@@ -1,4 +1,4 @@
-# product-listing-page
+# learn-to-read
 Simple product listing using React + Redux + Sass
 
 ## Project deployment

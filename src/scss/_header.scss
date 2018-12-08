@@ -1,13 +1,25 @@
+@import 'constants';
+$header-desktop-height: 100px;
+$header-mobile-height: 60px;
+
 header {
+    @include mobile-view {
+        height: $header-mobile-height;
+    }
+
     background: $primary;
     color: $white;
+    display: flex;
     font-weight: bold;
+    height: $header-desktop-height;
+    z-index: 1;
 
     .container {
         align-items: center;
         display: flex;
         justify-content: space-between;
         padding: 1rem;
+        width: 100%;
     }
 
     h1 {
@@ -21,6 +33,15 @@ header {
     }
 
     .points {
+        @include mobile-view {
+            font-size: 1.5rem;
+            height: 36px;
+            margin-left: .5rem;
+            min-width: 36px;
+            padding-left: .1rem;
+            padding-right: .1rem;
+        }
+
         align-items: center;
         background: $white;
         border-radius: 50%;
@@ -28,9 +49,9 @@ header {
         color: $text-color;
         font-size: 2rem;
         justify-content: center;
-        height: 50px;
+        height: 48px;
         margin-left: 1rem;
-        min-width: 50px;
+        min-width: 48px;
         padding-left: .25rem;
         padding-right: .25rem;
     }

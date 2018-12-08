@@ -12,15 +12,16 @@
     }
 
     box-sizing: border-box;
-    display: inline-block;
-    max-width: 50%;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
 
     .puzzle__image-wrapper {
         align-items: center;
         display: flex;
         height: 400px;
+        z-index: -1;
     }
 
     .puzzle__image {
@@ -80,12 +81,17 @@
     }
 
     .puzzle__buttons {
-        margin-top: 4rem;
         text-align: center;
     }
 }
 
 .letter-button {
+    @include mobile-view {
+        font-size: 2.4rem;
+        height: 48px;
+        width: 48px;
+    }
+
     @include main-font;
     background: 0;
     border: 0;

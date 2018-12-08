@@ -39,19 +39,17 @@ class App extends React.Component {
                 <ErrorBoundary>
                     <header>
                         <div className="container">
-                            <h1>Czytaj.io</h1>
-                            <h2>punkty: <span className="points">{this.props.pointsCount}</span></h2>
+                            <h1>Naumi</h1>
+                            <h2>punkty <span className="points">{this.props.pointsCount}</span></h2>
                         </div>
                     </header>
-                    <div className="container">
-                        <section className="puzzles">
-                            <Letters
-                                key = {wordId}
-                                url = {wordUrl}
-                                text = {wordText}
-                            />
-                        </section>
-                    </div>
+                    <main className="container puzzles">
+                        <Letters
+                            key = {wordId}
+                            url = {wordUrl}
+                            text = {wordText}
+                        />
+                    </main>
                 </ErrorBoundary>
             </div>
         );
