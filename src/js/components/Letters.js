@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import alphabet from "../constants/alphabet";
 
 class Letters extends React.Component {
     constructor(props) {
@@ -13,20 +13,31 @@ class Letters extends React.Component {
         };
     }
 
-    handleButtonClick (buttonIndex) {
+    handleButtonClick (buttonIndex, letter) {
         let lettersSolved = this.state.lettersSolved;
         const wordLength = this.state.wordLength;
+
+
         if (buttonIndex === lettersSolved) {
+            if (Object.prototype.hasOwnProperty.call(alphabet, letter)) {
+                const letterAudio = new Audio(alphabet[letter].sound);
+                letterAudio.play();
+            }
             lettersSolved++;
             const puzzleSolved = (wordLength === lettersSolved);
-
+            if (puzzleSolved) {
+                const wordAudio = new Audio(this.props.sound);
+                setTimeout(
+                    function(){
+                        wordAudio.play();
+                    }, 500);
+            }
             this.setState({ lettersSolved, puzzleSolved });
         } else {
             if (this.state.puzzleSolved) {
                 this.props.puzzleSolved();
             }
         }
-
     }
 
     setImageClass() {
@@ -65,7 +76,7 @@ class Letters extends React.Component {
 
     render() {
         const text = this.props.text;
-        const imgUrl = this.props.url;
+        const imgUrl = this.props.image;
         let letters = [];
         for (let i = 0; i < text.length; i++) {
             letters.push(text.charAt(i));
@@ -82,7 +93,7 @@ class Letters extends React.Component {
                         (
                             <button
                                 key={index}
-                                onClick={()=> {this.handleButtonClick(index);}}
+                                onClick={()=> {this.handleButtonClick(index, letter);}}
                                 className={this.setButtonClass(index)}>
                                 {letter}
                             </button>
@@ -95,7 +106,8 @@ class Letters extends React.Component {
 }
 
 Letters.propTypes = {
-    url: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    sound: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
 };
 

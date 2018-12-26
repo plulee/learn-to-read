@@ -31,7 +31,8 @@ class App extends React.Component {
         const words = this.state.words;
 
         const wordId = words[index].id;
-        const wordUrl = words[index].url;
+        const wordImage = words[index].image;
+        const wordSound = words[index].sound;
         const wordText = words[index].text;
 
         return (
@@ -46,7 +47,8 @@ class App extends React.Component {
                     <main className="container puzzles">
                         <Letters
                             key = {wordId}
-                            url = {wordUrl}
+                            image = {wordImage}
+                            sound = {wordSound}
                             text = {wordText}
                         />
                     </main>
