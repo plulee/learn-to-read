@@ -8,6 +8,7 @@ header {
     }
 
     background: $primary;
+    background-image: linear-gradient(to right, $primary, $secondary-darker);
     color: $white;
     display: flex;
     font-weight: bold;
