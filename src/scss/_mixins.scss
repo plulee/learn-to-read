@@ -6,6 +6,12 @@
     }
 }
 
+@mixin large-desktop-view() {
+    @media only screen and (min-width: $large-desktop-width)  {
+        @content
+    }
+}
+
 @mixin main-font() {
     font-family: 'Lora', Helvetica, sans-serif;
 }

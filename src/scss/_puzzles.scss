@@ -18,22 +18,30 @@
     justify-content: space-evenly;
 
     .puzzle__image-wrapper {
+        @include large-desktop-view {
+            height: 400px;
+        }
+
         align-items: center;
         display: flex;
-        height: 400px;
+        height: 360px;
         z-index: -1;
     }
 
     .puzzle__image {
         @include mobile-view {
-            max-width: 100%;
+            max-width: 90%;
+        }
+
+        @include large-desktop-view {
+            max-height: 400px;
         }
 
         border: 1px solid $light-gray;
         box-shadow: 0 4px 20px $light-gray;
         display: block;
         filter: blur(0);
-        max-height: 400px;
+        max-height: 360px;
         width: auto;
         margin-left: auto;
         margin-right: auto;
@@ -81,6 +89,10 @@
     }
 
     .puzzle__buttons {
+        @include mobile-view {
+            margin-bottom: 1rem;
+        }
+
         justify-content: center;
         display: flex;
         padding-bottom: 1rem;
