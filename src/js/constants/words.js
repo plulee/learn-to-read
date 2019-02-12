@@ -343,6 +343,41 @@ const words = [
         category: cat.SINGLE,
         image: "./images/zegar.jpg",
         sound: "./sounds/words/zegar.mp3"
+    },
+    {
+        id: "50",
+        text: "guzik",
+        category: cat.SINGLE,
+        image: "./images/guzik.jpg",
+        sound: "./sounds/words/guzik.mp3"
+    },
+    {
+        id: "51",
+        text: "koala",
+        category: cat.SINGLE,
+        image: "./images/koala.jpg",
+        sound: "./sounds/words/koala.mp3"
+    },
+    {
+        id: "52",
+        text: "noga",
+        category: cat.SINGLE,
+        image: "./images/noga.jpg",
+        sound: "./sounds/words/noga.mp3"
+    },
+    {
+        id: "53",
+        text: "palec",
+        category: cat.SINGLE,
+        image: "./images/palec.jpg",
+        sound: "./sounds/words/palec.mp3"
+    },
+    {
+        id: "54",
+        text: "ryba",
+        category: cat.SINGLE,
+        image: "./images/ryba.jpg",
+        sound: "./sounds/words/ryba.mp3"
     }
 ];
 
